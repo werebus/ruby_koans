@@ -21,7 +21,7 @@ class AboutObjects < Neo::Koan
 
   def test_every_object_has_an_id
     obj = Object.new
-    assert_equal __(Fixnum), obj.object_id.class
+    assert obj.object_id.is_a?(__(Integer))
   end
 
   def test_every_object_has_different_id
