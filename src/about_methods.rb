@@ -39,6 +39,7 @@ class AboutMethods < Neo::Koan
 
   # NOTE: wrong number of arguments is not a SYNTAX error, but a
   # runtime error.
+  # tip: When regex contains parentheses, you must escape them with backslash.
   def test_calling_global_methods_with_wrong_number_of_arguments
     exception = assert_raise(___(ArgumentError)) do
       my_global_method
