@@ -145,9 +145,7 @@ EOS
 
   def test_you_can_get_a_single_character_from_a_string
     string = "Bacon, lettuce and tomato"
-    assert_equal __(97, 'a'), string[1]
-
-    # Surprised?
+    assert_equal __('a'), string[1]
   end
 
   def test_in_modern_ruby_single_characters_are_represented_by_strings
