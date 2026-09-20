@@ -150,20 +150,9 @@ EOS
     # Surprised?
   end
 
-  in_ruby_version("1.8") do
-    def test_in_older_ruby_single_characters_are_represented_by_integers
-      assert_equal __(97, 'a'), ?a
-      assert_equal __(true, false), ?a == 97
-
-      assert_equal __(true), ?b == (?a + 1)
-    end
-  end
-
-  in_ruby_version("1.9", "2", "3", "4") do
-    def test_in_modern_ruby_single_characters_are_represented_by_strings
-      assert_equal __('a'), ?a
-      assert_equal __(false), ?a == 97
-    end
+  def test_in_modern_ruby_single_characters_are_represented_by_strings
+    assert_equal __('a'), ?a
+    assert_equal __(false), ?a == 97
   end
 
   def test_strings_can_be_split
