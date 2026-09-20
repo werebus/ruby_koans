@@ -26,7 +26,7 @@ def in_ruby_version(*versions)
 end
 
 def before_ruby_version(version)
-  Gem::Version.new(RUBY_VERSION) < Gem::Version.new(version)
+  Gem::Version.new(RUBY_VERSION.dup) < Gem::Version.new(version)
 end
 
 in_ruby_version("1.8") do

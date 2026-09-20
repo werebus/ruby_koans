@@ -19,10 +19,10 @@ namespace "check" do
   task :asserts do
     puts "Checking for asserts missing the replacement text:"
     begin
-      sh "egrep -n 'assert( |_)' src/about_*.rb | egrep -v '__|_n_|project|about_assert' | egrep -v ' *#'"
+      sh "grep -En 'assert( |_)' src/about_*.rb | grep -Ev '__|_n_|project|about_assert' | grep -Ev ' *#'"
       puts
       puts "Examine the above lines for missing __ replacements"
-    rescue RuntimeError => ex
+    rescue RuntimeError
       puts "OK"
     end
     puts
