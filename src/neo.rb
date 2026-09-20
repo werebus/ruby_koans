@@ -30,31 +30,18 @@ def before_ruby_version(version)
 end
 
 # Standard, generic replacement value.
-# If value19 is given, it is used in place of value for Ruby 1.9.
-def __(value="FILL ME IN", value19=:mu)
-  if RUBY_VERSION < "1.9"
-    value
-  else
-    (value19 == :mu) ? value : value19
-  end
+def __(value="FILL ME IN")
+  value
 end
 
 # Numeric replacement value.
-def _n_(value=999999, value19=:mu)
-  if RUBY_VERSION < "1.9"
-    value
-  else
-    (value19 == :mu) ? value : value19
-  end
+def _n_(value=999999)
+  value
 end
 
 # Error object replacement value.
-def ___(value=FillMeInError, value19=:mu)
-  if RUBY_VERSION < "1.9"
-    value
-  else
-    (value19 == :mu) ? value : value19
-  end
+def ___(value=FillMeInError)
+  value
 end
 
 # Method name replacement.
