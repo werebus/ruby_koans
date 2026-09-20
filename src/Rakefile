@@ -7,6 +7,8 @@ require 'rake/testtask'
 task :default => :test
 
 task :test do
-  ruby 'path_to_enlightenment.rb'
+  ruby 'path_to_enlightenment.rb' do |ok, res|
+    exit res.exitstatus unless ok
+  end
 end
 

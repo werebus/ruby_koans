@@ -519,6 +519,7 @@ ENDTEXT
         sensei.observe(step.meditate)
       end
       sensei.instruct
+      !sensei.failed?
     end
 
     def each_step
@@ -536,6 +537,8 @@ ENDTEXT
 end
 
 END {
+  exception = $!
+
   Neo::Koan.command_line(ARGV)
-  Neo::ThePath.new.walk
+  exit exception.nil? && Neo::ThePath.new.walk
 }
