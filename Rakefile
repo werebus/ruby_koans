@@ -99,11 +99,6 @@ end
 desc "Create packaged files for distribution"
 task :package => [ZIP_FILE]
 
-desc "Upload the package files to the web server"
-task :upload => [ZIP_FILE] do
-  sh "scp #{ZIP_FILE} linode:sites/onestepback.org/download"
-end
-
 desc "Generate the Koans from the source files from scratch."
 task :regen => [:clobber_koans, :gen]
 
