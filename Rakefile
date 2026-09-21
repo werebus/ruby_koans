@@ -92,7 +92,7 @@ task :clobber_zip do
   rm ZIP_FILE
 end
 
-file ZIP_FILE => KOAN_FILES + [DOWNLOAD_DIR] do
+file ZIP_FILE => [:gen, DOWNLOAD_DIR] do
   sh "zip #{ZIP_FILE} #{PROB_DIR}/*"
 end
 
